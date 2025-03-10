@@ -33,7 +33,7 @@
       .animateUl {
         &::before {
           content: "";
-         transform: translateX(40px);
+          transform: translateX(40px);
           position: absolute;
           border-radius: 50%;
           background: radial-gradient(circle, #b7745f, #4a2c1f);
@@ -51,11 +51,10 @@
       box-shadow: 0 0 0px rgba(0, 0, 0, 0.3);
     }
     100% {
-      
       width: 170px;
       height: 170px;
-         transform: translateX(0px);
-      
+      transform: translateX(0px);
+
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
   }
@@ -65,7 +64,7 @@
     height: toRem(30);
     width: toRem(30);
     position: relative;
-    transition: all 1s ease-in;
+    transition: all 0.5s ease-in;
 
     &::before {
       content: "";
@@ -137,7 +136,7 @@
         top: -33px;
         left: 4px;
         writing-mode: vertical-lr;
-        animation: pair   1s infinite linear;
+        animation: pair 1s infinite linear;
       }
       &::after {
         content: "~";
@@ -217,7 +216,7 @@
       height: 3px;
       background: radial-gradient(circle, #6b3f32, #4a2c1f);
       border-radius: 50% 50% 60% 60% / 30% 40% 100% 100%;
-      animation: drop 0.5s 1s  linear;
+      animation: drop 0.5s 1s linear;
       opacity: 0;
 
       &::before {
@@ -234,9 +233,6 @@
       }
       &::after {
         content: "";
-        // width: 100px;
-        // height: 100%;
-        // background: #000;
       }
     }
   }
@@ -251,7 +247,6 @@
       left: -43vh;
       height: 20px;
       opacity: 1;
-      
     }
   }
   @keyframes pair {
