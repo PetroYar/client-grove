@@ -9,6 +9,7 @@ const Header = (props) => {
   const [showBurger, setShowBurger] = useState(false);
 
   const mobile = 540;
+  
   const toggleBurger = () => {
     setShowBurger((prev) => !prev);
   };
@@ -23,10 +24,10 @@ const Header = (props) => {
             </Link>
           </div>
         )}
-        <nav className={showBurger ? styles.active : ""}>
+        <nav className={!showBurger ? styles.active : ""}>
           <ul
             className={`${
-              showBurger ? "" : styles.animateUl
+              !showBurger ? "" : styles.animateUl
             }`}
           >
             <li>
@@ -53,7 +54,7 @@ const Header = (props) => {
         {width < mobile && (
           <button
             onClick={toggleBurger}
-            className={`${styles.burger} ${showBurger ? "" : styles.open}`}
+            className={`${styles.burger} ${showBurger ? styles.open : ""}`}
           >
             <span className={styles.span}></span>
 
