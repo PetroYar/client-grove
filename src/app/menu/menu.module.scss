@@ -1,0 +1,5 @@
+@use "../../styles/forward.scss" as * ;
+
+.container {
+ @include adaptiveValue("font-size", 60,10 );
+}

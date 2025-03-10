@@ -1,0 +1,14 @@
+@use "./mixin.scss" as *;
+@use "./null.scss" as *;
+@use "./variable.scss" as *;
+
+
+body {
+  display: flex;
+
+  flex-direction: column;
+  overflow: hidden;
+}
+main {
+  flex: 1 0 auto;
+}

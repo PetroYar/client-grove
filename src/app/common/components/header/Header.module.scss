@@ -1,0 +1,299 @@
+@use "../../../../styles/forward.scss" as *;
+
+.header {
+  position: relative;
+
+  .container {
+    padding: 0 toRem(15);
+    @media (max-width: $mobileSmall) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include adaptiveValue("padding-top", 25, 10);
+    @include adaptiveValue("padding-bottom", 25, 10);
+  }
+  nav {
+    @media (max-width: $mobileSmall) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 50%;
+      transition: right 0.3s ease-in-out;
+      background: $bgCream;
+      padding: toRem(30);
+      ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        position: relative;
+      }
+      .animateUl {
+        &::before {
+          content: "";
+         transform: translateX(40px);
+          position: absolute;
+          border-radius: 50%;
+          background: radial-gradient(circle, #b7745f, #4a2c1f);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+          z-index: 0;
+          animation: name 1s 2s forwards linear;
+        }
+      }
+    }
+  }
+  @keyframes name {
+    0% {
+      width: 0;
+      height: 0;
+      box-shadow: 0 0 0px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+      width: 200px;
+      height: 200px;
+         transform: translateX(0px);
+      
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+  }
+  .burger {
+    z-index: 10;
+    // padding: toRem(10);
+    height: toRem(30);
+    width: toRem(30);
+    position: relative;
+    transition: all 1s ease-in;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 4px;
+      // background: #000;
+      border: solid 1px;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      transition: all 1s ease-in;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 1px;
+      background: #000;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 1s ease-in;
+    }
+    .span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      transition: all 1s ease-in;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 1px;
+        transition: all 1s ease-in;
+        background: #000;
+        bottom: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+
+        border-right: 2px solid;
+        top: -10px;
+        left: 13px;
+        border-radius: 50%;
+        transform: rotate(15deg);
+        transition: all 1s ease-in;
+      }
+    }
+    .animate {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      transition: all 1s ease-in;
+
+      &::before {
+        content: "~";
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        font-size: 20px;
+        top: -33px;
+        left: 4px;
+        writing-mode: vertical-lr;
+        animation: pair 2s infinite linear;
+      }
+      &::after {
+        content: "~";
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        font-size: 20px;
+        top: -33px;
+        left: 10px;
+        writing-mode: vertical-lr;
+        animation: pair 2s 1s infinite linear;
+      }
+    }
+  }
+  .open {
+    transform: rotate(-90deg) translateY(-20px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 4px;
+      transition: all 1s ease-in;
+
+      border: solid 1px;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 1px;
+      background: #000;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 1px;
+        background: #000;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+
+        border-right: 2px solid;
+        top: -10px;
+        left: 13px;
+        border-radius: 50%;
+        transform: rotate(15deg);
+      }
+    }
+    .animate {
+      //  opacity: 0;
+      position: absolute;
+      left: -5px;
+      top: -1px;
+
+      transform: rotate(-90deg);
+      background: #000;
+      width: 10px;
+      height: 3px;
+      background: radial-gradient(circle, #6b3f32, #4a2c1f);
+      border-radius: 50% 50% 60% 60% / 30% 40% 100% 100%;
+      animation: drop 1s 1s  linear;
+      opacity: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: none;
+        width: 1px;
+        height: 20px;
+        font-size: 20px;
+        top: -33px;
+        left: 4px;
+        writing-mode: vertical-lr;
+        animation: pair 2s infinite linear;
+      }
+      &::after {
+        content: "";
+        // width: 100px;
+        // height: 100%;
+        // background: #000;
+      }
+    }
+  }
+  @keyframes drop {
+    0% {
+      left: -8px;
+      top: -30%;
+      height: 20px;
+      opacity: 1;
+    }
+    100% {
+      left: -43vh;
+      height: 20px;
+      opacity: 1;
+      
+    }
+  }
+  @keyframes pair {
+    0% {
+      top: -32px;
+
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      top: -40px;
+      opacity: 0;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: toRem(24);
+    li {
+      text-transform: capitalize;
+      font-size: toRem(18);
+      position: relative;
+      @media (max-width: $mobileSmall) {
+        color: $bgCream;
+      }
+    }
+  }
+  .img {
+    z-index: 10;
+    @media (min-width: $mobileSmall) {
+      @include adaptiveValue("margin-left", 120, 20);
+      @include adaptiveValue("margin-right", 120, 20);
+    }
+    @include adaptiveValue("width", 100, 70);
+
+    img {
+      width: 100%;
+    }
+  }
+  .active {
+    right: -100%;
+  }
+}
