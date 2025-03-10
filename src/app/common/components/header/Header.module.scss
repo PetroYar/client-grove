@@ -39,7 +39,7 @@
           background: radial-gradient(circle, #b7745f, #4a2c1f);
           box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
           z-index: 0;
-          animation: name 1s 2s forwards linear;
+          animation: name 0.5s 1.5s forwards linear;
         }
       }
     }
@@ -51,8 +51,9 @@
       box-shadow: 0 0 0px rgba(0, 0, 0, 0.3);
     }
     100% {
-      width: 200px;
-      height: 200px;
+      
+      width: 170px;
+      height: 170px;
          transform: translateX(0px);
       
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -136,7 +137,7 @@
         top: -33px;
         left: 4px;
         writing-mode: vertical-lr;
-        animation: pair 2s infinite linear;
+        animation: pair   1s infinite linear;
       }
       &::after {
         content: "~";
@@ -147,7 +148,7 @@
         top: -33px;
         left: 10px;
         writing-mode: vertical-lr;
-        animation: pair 2s 1s infinite linear;
+        animation: pair 1s 0.5s infinite linear;
       }
     }
   }
@@ -216,7 +217,7 @@
       height: 3px;
       background: radial-gradient(circle, #6b3f32, #4a2c1f);
       border-radius: 50% 50% 60% 60% / 30% 40% 100% 100%;
-      animation: drop 1s 1s  linear;
+      animation: drop 0.5s 1s  linear;
       opacity: 0;
 
       &::before {
