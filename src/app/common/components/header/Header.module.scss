@@ -216,7 +216,7 @@
       height: 3px;
       background: radial-gradient(circle, #6b3f32, #4a2c1f);
       border-radius: 50% 50% 60% 60% / 30% 40% 100% 100%;
-      animation: drop 0.5s 1s linear;
+      animation: drop 0.5s 1s ease-in;
       opacity: 0;
 
       &::before {
