@@ -1,5 +1,5 @@
-@use './variable.scss' as *;
-
+// @use './variable.scss' as *;
+@use './forward.scss' as *;
 
 html {
   overflow-x: hidden;
@@ -35,13 +35,14 @@ body {
   color: $text;
   line-height: 1;
   font-family: "Inter", 'sans-serif';
-  font-size: 16px;
+  
   //text-rendering: optimizeLegibility;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @include adaptiveValue("font-size",18 ,16 );
 }
 input,
 button,

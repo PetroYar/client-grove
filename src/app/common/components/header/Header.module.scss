@@ -3,8 +3,9 @@
 .header {
   position: relative;
 
+@include adaptiveValue("margin-bottom",30 ,10 );
   .container {
-    padding: 0 toRem(15);
+    
     @media (max-width: $mobileSmall) {
       display: flex;
       justify-content: space-between;
@@ -16,8 +17,9 @@
   nav {
     @media (max-width: $mobileSmall) {
       position: absolute;
+      z-index: 5;
       top: 0;
-      right: 0;
+      right: -15px;
       height: 100vh;
       width: 50%;
       transition: right 0.3s ease-in-out;
@@ -270,8 +272,9 @@
     gap: toRem(24);
     li {
       text-transform: capitalize;
-      font-size: toRem(18);
+      
       position: relative;
+      font-weight: 700;
       @media (max-width: $mobileSmall) {
         color: $bgCream;
       }
@@ -280,8 +283,8 @@
   .img {
     z-index: 10;
     @media (min-width: $mobileSmall) {
-      @include adaptiveValue("margin-left", 120, 20);
-      @include adaptiveValue("margin-right", 120, 20);
+      @include adaptiveValue("margin-left", 100, 20);
+      @include adaptiveValue("margin-right", 100, 20);
     }
     @include adaptiveValue("width", 100, 70);
 

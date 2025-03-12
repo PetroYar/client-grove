@@ -1,32 +1,35 @@
-const getData = async () => {
+import Hero from "./common/components/home/hero/Hero";
+import Promo from "./common/components/home/promo/Promo";
+
+import { getData } from "@/app/common/libs/services";
+
+const fetchData = async () => {
   try {
-    const res = await fetch(
-      "https://grove-server-one.vercel.app/api/content/page/hero"
-    );
-    if (!res.ok) {
-      throw new Error(`Failed to fetch data: ${res.status}`);
-    }
-    return await res.json();
+    return await getData("/content/page/home");
   } catch (error) {
-    console.error("Error fetching data:", error);
-    return null;
+    console.error("Error during fetching:", error);
   }
 };
 
 export default async function Home() {
-  const data = await getData();
+  const data = await fetchData();
+
+ const groupedData = data.reduce(
+   (acc, item) => {
+     if (item.key.includes("hero")) {
+       acc.hero.push(item);
+     } else if (item.key.includes("promo")) {
+       acc.promo.push(item);
+     }
+     return acc;
+   },
+   { hero: [], promo: [] }
+ );
 
   return (
     <div>
-      <section>
-        {data.map((item) => (
-          <div key={item._id}>
-            {item.key.includes("title") && <h1>{item.value}</h1>}
-            {item.key.includes("description") && <p>{item.value}</p>}
-            {item.image && <img src={item.image} alt={item.key} />}
-          </div>
-        ))}
-      </section>
+      <Hero data={groupedData.hero} />
+      <Promo />
     </div>
   );
 }

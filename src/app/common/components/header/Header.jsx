@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import styles from "./Header.module.scss";
-import useWindowSize from "../hooks/useWindowSize";
+import useWindowSize from "../../hooks/useWindowSize";
 import { useState } from "react";
 
 const Header = (props) => {
@@ -29,13 +29,13 @@ const Header = (props) => {
             className={`${
               !showBurger ? "" : styles.animateUl
             }`}
-          >
+          ><li>
+              <Link href={"/"}>головна</Link>
+            </li>
             <li>
               <Link href={"/menu"}>меню</Link>
             </li>
-            <li>
-              <Link href={"/galery"}>галерея</Link>
-            </li>
+           
             {width > mobile && (
               <li className={styles.img}>
                 <Link href={"/"}>
@@ -46,8 +46,8 @@ const Header = (props) => {
             <li>
               <Link href={"/about"}>про нас</Link>
             </li>
-            <li>
-              <Link href={"/contacts"}>контакти</Link>
+             <li>
+              <Link href={"/galery"}>галерея</Link>
             </li>
           </ul>
         </nav>

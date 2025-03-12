@@ -2,13 +2,19 @@
 @use "./null.scss" as *;
 @use "./variable.scss" as *;
 
-
 body {
-  display: flex;
-
-  flex-direction: column;
-  overflow-X: hidden;
+  overflow-x: hidden;
 }
 main {
   flex: 1 0 auto;
+}
+.wraper {
+  flex-direction: column;
+  display: flex;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 15px;
+  @media (max-width:$mobileSmall){
+     padding: 0 toRem(5); 
+  }
 }

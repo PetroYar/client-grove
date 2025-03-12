@@ -1,0 +1,55 @@
+@use "../../../styles/forward.scss" as *;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: toRem(280);
+  @media (max-width: 1064px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  @include adaptiveValue("margin-bottom", 170, 70);
+  .content {
+    h2 {
+      @include adaptiveValue("margin-bottom", 64, 24);
+    }
+    p {
+      width: 100%;
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 20, 10);
+      }
+    }
+  }
+  .images {
+    display: flex;
+
+    position: relative;
+    @media (max-width: 1064px) {
+      margin-left: 120px;
+    }
+  }
+}
+
+.mini {
+  position: relative;
+  @include adaptiveValue("width", 420, 176);
+  @include adaptiveValue("height", 607, 230);
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15% 5%;
+  }
+  &:first-child {
+    position: absolute;
+    z-index: 2;
+    left: -60%;
+    top: 20%;
+
+    img {
+      border-radius: 5% 15%;
+    }
+  }
+}
