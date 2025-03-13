@@ -1,0 +1,56 @@
+@use "../../../styles/forward.scss" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: $bgCream;
+  padding: 20px;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    text-transform: capitalize;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 40%;
+    border-radius: 8px;
+    border: 1px solid white;
+    @include adaptiveValue("gap", 25, 18);
+    @include adaptiveValue("padding", 24, 14);
+    @media (max-width: 610px) {
+      // flex: 1 0 100%;
+      width: 100%;
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: toRem(20);
+    @media (max-width: 610px) {
+      flex-direction: column-reverse;
+    }
+  }
+  .dashed {
+    flex: 1;
+    border-bottom: 1px dashed;
+  }
+  .map {
+    width: 100%;
+    flex: 0 0 50%;
+  }
+  .text {
+    width: 40%;
+    margin-left: auto;
+
+    margin-bottom: toRem(20);
+    @media (max-width: 610px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

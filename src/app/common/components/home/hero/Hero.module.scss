@@ -54,10 +54,10 @@
   }
 .img {
   position: relative;
-  @include adaptiveValue("width", 547, 273);
-  @include adaptiveValue("height", 753, 376);
   border-radius: 20% 5%;
   overflow: hidden;
+  @include adaptiveValue("width", 547, 273);
+  @include adaptiveValue("height", 753, 376);
 
   img {
     object-fit: cover; 

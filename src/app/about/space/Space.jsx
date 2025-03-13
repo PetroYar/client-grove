@@ -36,6 +36,8 @@ const Space = ({data}) => {
         {/* <Image className={styles.mini} img={image1} />
         <Image className={styles.mini} img={image2} /> */}
       </div>
+
+     
     </section>
   );
 };
