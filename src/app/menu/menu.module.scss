@@ -1,5 +1,19 @@
-@use "../../styles/forward.scss" as * ;
+@use "../../styles/forward.scss" as *;
 
 .container {
- @include adaptiveValue("font-size", 60,10 );
+  h1 {
+    text-transform: capitalize;
+    font-weight: 700;
+    text-align: center;
+
+    margin-bottom: toRem(30);
+    @include adaptiveValue("font-size", 70, 24);
+  }
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+  font-size: 30px;
+  margin-bottom: toRem(70);
 }

@@ -7,7 +7,7 @@ import Paragraph from "../../paragraph/Paragraph";
 import Image from "next/image";
 
 export default async function Hero({ data }) {
-  const { title, description, image } = data.reduce(
+  const { title, description, image } = data?.reduce(
     (acc, item) => {
       if (item.key === "hero-title") acc.title = item.value;
       if (item.key === "hero-description") acc.description = item.value;
@@ -29,7 +29,7 @@ export default async function Hero({ data }) {
           </Link>
         </div>
         <div className={styles.img}>
-          <Image src={image} alt="" fill />
+          <Image src={image} alt="" fill sizes="100%" priority />
         </div>
       </div>
     </section>

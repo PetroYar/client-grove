@@ -2,7 +2,7 @@ import TitleH2 from '@/app/common/components/titleH2/TitleH2';
 import styles from './Space.module.scss';
 import Paragraph from '@/app/common/components/paragraph/Paragraph';
 import Image from 'next/image';
-// import Image from '@/app/common/components/image/Image';
+
 
 const Space = ({data}) => {
   const { title, paragraph1, paragraph2, image1, image2 } = data.reduce(
@@ -27,17 +27,12 @@ const Space = ({data}) => {
       </div>
       <div className={styles.images}>
         <div className={styles.mini}>
-          <Image src={image1} alt="Cafe from the street" fill />
+          <Image src={image1} alt="Cafe from the street" fill sizes="100%" />
         </div>
         <div className={styles.mini}>
-          <Image src={image2} alt="Cafe from the street" fill />
+          <Image src={image2} alt="Cafe from the street" fill sizes="100%" />
         </div>
-
-        {/* <Image className={styles.mini} img={image1} />
-        <Image className={styles.mini} img={image2} /> */}
       </div>
-
-     
     </section>
   );
 };

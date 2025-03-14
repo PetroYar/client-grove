@@ -22,7 +22,7 @@
     @include adaptiveValue("gap", 25, 18);
     @include adaptiveValue("padding", 24, 14);
     @media (max-width: 610px) {
-      // flex: 1 0 100%;
+     
       width: 100%;
     }
   }

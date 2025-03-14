@@ -11,10 +11,11 @@ const fetchData = async () => {
   }
 };
 
+
 export default async function Home() {
   const data = await fetchData();
 
- const groupedData = data.reduce(
+ const groupedData = data?.reduce(
    (acc, item) => {
      if (item.key.includes("hero")) {
        acc.hero.push(item);
@@ -28,7 +29,7 @@ export default async function Home() {
 
   return (
     <div>
-      <Hero data={groupedData.hero} />
+      <Hero data={groupedData?.hero} />
       <Promo />
     </div>
   );

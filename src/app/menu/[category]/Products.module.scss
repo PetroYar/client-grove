@@ -1,0 +1,11 @@
+@use "../../../styles/forward.scss" as *;
+
+.container {
+  
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(20);
+  }
+}
+

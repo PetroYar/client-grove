@@ -12,6 +12,7 @@ main {
   flex-direction: column;
   display: flex;
   max-width: 1480px;
+  height: 100%;
   margin: 0 auto;
   padding: 0 15px;
   @media (max-width:$mobileSmall){

@@ -1,12 +1,9 @@
+import styles from "./menu.module.scss";
 
-import styles from  './menu.module.scss'
+const MenuPage = async (props) => {
+  return <div className={styles.container}>
+    
+  </div>;
+};
 
-const MenuPage = (props)=>{
-  return (
-<div className={styles.container}>
-  menu
-</div>
-  )
-}
-
-export default MenuPage
+export default MenuPage;

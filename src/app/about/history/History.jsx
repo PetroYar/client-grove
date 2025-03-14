@@ -19,9 +19,9 @@ const History = ({ data }) => {
   return (
     <section className={styles.container}>
       <div className={styles.img}>
-        <Image src={image} alt=""  fill />
+        <Image src={image} alt="" fill sizes="100%" />
       </div>
-      
+
       <div className={styles.content}>
         <TitleH2>{title}</TitleH2>
 

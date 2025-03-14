@@ -1,0 +1,50 @@
+@use "../../../../styles/forward.scss" as *;
+
+.card {
+  background: $bgCream;
+  padding: toRem(0) toRem(20) toRem(20) toRem(20);
+
+  border-radius: 10px;
+  text-align: center;
+  width: toRem(270);
+  height: toRem(310);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h6 {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 20, 18);
+  }
+  p {
+    line-height: 1.5;
+    font-size: toRem(16);
+  }
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .size {
+    font-weight: 700;
+    color: $braun;
+    letter-spacing: 1px;
+  }
+  .price {
+    background: #000;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: toRem(64);
+    height: toRem(64);
+  }
+  .img {
+    position: relative;
+    width: 142px;
+    height: 128px;
+    margin: auto;
+    margin-top: -30px;
+  }
+}
