@@ -1,5 +1,5 @@
-// const API_URL = "https://grove-server-one.vercel.app/api";
-const API_URL = 'http://localhost:5000/api'
+const API_URL = "https://grove-server-one.vercel.app/api";
+// const API_URL = 'http://localhost:5000/api'
 
 export const getData = async (params) => {
   try {
