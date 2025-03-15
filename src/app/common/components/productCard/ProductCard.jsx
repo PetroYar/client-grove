@@ -3,6 +3,7 @@ import styles from "./ProductCard.module.scss";
 import Link from "next/link";
 
 const ProductCard = ({ product, category }) => {
+  console.log(product)
   return (
     <article className={styles.card}>
       <div className={styles.img}>

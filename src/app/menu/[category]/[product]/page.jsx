@@ -32,6 +32,7 @@ const ProductPage = async ({ params }) => {
 
   return (
     <div>
+      <img src={data.image} alt="" />
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );

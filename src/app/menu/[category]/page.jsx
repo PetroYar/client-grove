@@ -1,7 +1,7 @@
 import ProductCard from "@/app/common/components/productCard/ProductCard";
 import { getData } from "@/app/common/libs/services";
 import styles from "./Products.module.scss";
-import Link from "next/link";
+
 import Pagination from "@/app/common/components/pagination/Pagination";
 
 const fetchData = async (slug, start, limit) => {
@@ -16,6 +16,7 @@ const fetchData = async (slug, start, limit) => {
 
 const ProductsPage = async ({ params, searchParams }) => {
   const { category } = await params;
+  console.log(category)
   const start = parseInt(searchParams?._start|| 0, 10);
   const limit = 2;
 
