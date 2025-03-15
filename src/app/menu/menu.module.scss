@@ -13,7 +13,26 @@
 
 .list {
   display: flex;
-  gap: 20px;
-  font-size: 30px;
+  gap: 10px;
   margin-bottom: toRem(70);
+  border-bottom: 2px solid $braun;
+  max-width: max-content;
+}
+
+.link {
+  line-height: 1.5;
+  text-transform: capitalize;
+  font-size: toRem(20);
+  border: 1px solid;
+  border-radius: 4px 4px 0 0;
+  padding: toRem(5) toRem(10);
+
+  border-bottom: none;
+  transition: all 0.3s;
+}
+.active {
+  border: 2px solid $braun;
+  border-bottom: none;
+  background: $bgCream;
+ transform: scale3d(1, 1.1, 1);
 }

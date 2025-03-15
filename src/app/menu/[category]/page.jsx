@@ -16,8 +16,8 @@ const fetchData = async (slug, start, limit) => {
 
 const ProductsPage = async ({ params, searchParams }) => {
   const { category } = await params;
-  console.log(category)
-  const start = parseInt(searchParams?._start|| 0, 10);
+  console.log(category);
+  const start = parseInt(searchParams?._start || 0, 10);
   const limit = 2;
 
   const data = await fetchData(category, start, limit);
