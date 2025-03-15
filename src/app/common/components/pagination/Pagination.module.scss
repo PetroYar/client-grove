@@ -1,0 +1,11 @@
+@use "../../../../styles/forward.scss" as *;
+
+.pagination{
+  display: flex;
+  align-items: center;
+  gap: toRem(5);
+  justify-content: end;
+  .active{
+    color: $pink;
+  }
+}
