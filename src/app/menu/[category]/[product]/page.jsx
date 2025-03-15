@@ -28,9 +28,9 @@ export async function generateMetadata({ params }) {
       description: data.seo.description,
       images: [
         {
-          url: data.seo.image || "/default-image.jpg",
-          width: 1200,
-          height: 630,
+          url: data.image,
+          width: 500,
+          height: 300,
           alt: data.seo.title,
         },
       ],
