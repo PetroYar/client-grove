@@ -23,6 +23,18 @@ export async function generateMetadata({ params }) {
     title: data.seo.title,
     description: data.seo.description,
     keywords: data.seo.keywords,
+    openGraph: {
+      title: data.seo.title,
+      description: data.seo.description,
+      images: [
+        {
+          url: data.seo.image || "/default-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: data.seo.title,
+        },
+      ],
+    },
   };
 }
 
