@@ -7,18 +7,22 @@
   border-radius: 10px;
   text-align: center;
   width: toRem(270);
-  height: toRem(310);
+  // height: toRem(310);
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: center;
+  @include adaptiveValue("width",270 ,160 );
+  // @include adaptiveValue("height",310 ,180 );
 
   h6 {
     font-weight: 700;
-    @include adaptiveValue("font-size", 20, 18);
+    @include adaptiveValue("font-size", 20, 16);
   }
   p {
     line-height: 1.5;
-    font-size: toRem(16);
+    
+    @include adaptiveValue("font-size",16 ,14 );
   }
   .flex {
     display: flex;
@@ -39,6 +43,9 @@
     justify-content: center;
     width: toRem(64);
     height: toRem(64);
+    @include adaptiveValue("width",64 ,30 );
+    @include adaptiveValue("height",64 ,30 );
+
   }
   .img {
     position: relative;
@@ -46,6 +53,8 @@
     height: 128px;
     margin: auto;
     margin-top: -30px;
+      @include adaptiveValue("width",142 ,60 );
+    @include adaptiveValue("height",128 ,60 );
   }
   .discount{
     text-decoration: line-through;

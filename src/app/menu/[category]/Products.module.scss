@@ -5,7 +5,10 @@
   .list {
     display: flex;
     flex-wrap: wrap;
-    gap: toRem(20);
+   
+    row-gap: toRem(40);
+    justify-content: space-around;
+    @include adaptiveValue("column-gap",20 ,10 );
   }
 }
 
