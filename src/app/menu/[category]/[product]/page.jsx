@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
       images: [
         {
           url: data.image,
-          width: 500,
+          width: 300,
           height: 300,
           alt: data.seo.title,
         },
