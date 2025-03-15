@@ -9,33 +9,38 @@ const Header = (props) => {
   const [showBurger, setShowBurger] = useState(false);
 
   const mobile = 540;
-  
+
   const toggleBurger = () => {
     setShowBurger((prev) => !prev);
+    if (!showBurger) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
   };
-
+  const handleLinkClick = () => {
+    setShowBurger(false); 
+    document.body.style.overflow = "auto"; 
+  };
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         {width < mobile && (
-          <div className={styles.img}>
+          <div onClick={handleLinkClick} className={styles.img}>
             <Link href={"/"}>
               <img src="/logo.png" alt="logo" />
             </Link>
           </div>
         )}
         <nav className={!showBurger ? styles.active : ""}>
-          <ul
-            className={`${
-              !showBurger ? "" : styles.animateUl
-            }`}
-          ><li>
+          <ul className={`${!showBurger ? "" : styles.animateUl}`}>
+            <li onClick={handleLinkClick}>
               <Link href={"/"}>головна</Link>
             </li>
-            <li>
+            <li onClick={handleLinkClick}>
               <Link href={"/menu"}>меню</Link>
             </li>
-           
+
             {width > mobile && (
               <li className={styles.img}>
                 <Link href={"/"}>
@@ -43,10 +48,12 @@ const Header = (props) => {
                 </Link>
               </li>
             )}
-            <li>
-              <Link href={"/about"}>про нас</Link>
+            <li onClick={handleLinkClick}>
+              <Link href={"/about"} onClick={handleLinkClick}>
+                про нас
+              </Link>
             </li>
-             <li>
+            <li onClick={handleLinkClick}>
               <Link href={"/galery"}>галерея</Link>
             </li>
           </ul>
