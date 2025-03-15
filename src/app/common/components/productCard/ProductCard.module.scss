@@ -47,4 +47,15 @@
     margin: auto;
     margin-top: -30px;
   }
+  .discount{
+    text-decoration: line-through;
+    text-decoration-color: red;
+    position: relative;
+    span{
+      position: absolute;
+      color: red;
+      top: 5px;
+    }
+  }
+
 }

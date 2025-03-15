@@ -12,7 +12,7 @@ const fetchData = async () => {
 
 const MenuLayout = async ({ children }) => {
   const data = await fetchData();
-
+  
   return (
     <div className={styles.container}>
       <h1>меню</h1>
@@ -28,6 +28,8 @@ const MenuLayout = async ({ children }) => {
       <div>{children}</div>
     </div>
   );
+  
 };
+
 
 export default MenuLayout;

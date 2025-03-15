@@ -1,24 +1,34 @@
 import { getData } from "@/app/common/libs/services";
+import { cache } from "react";
 
-const fetchData = async (slug) => {
+const fetchData = cache(async (slug) => {
   try {
     return await getData(`/product/${slug}`);
   } catch (error) {
     console.error(error);
   }
-};
-export async function generateMetadata({ data }) {
-  return {
-    title: data?.seo.title,
-    description: data?.seo.description, 
-    keywords: data?.seo.keywords.join(", "), 
-  };
-}
-const page = async ({ params }) => {
+});
+export async function generateMetadata({ params }) {
   const { product } = await params;
   const data = await fetchData(product);
-   await generateMetadata({ data });
  
+  if (!data?.seo) {
+    return {
+      title: "Продукт не знайдено",
+      description: "Опис відсутній",
+      keywords: "",
+    };
+  }
+  return {
+    title: data.seo.title,
+    description: data.seo.description,
+    keywords: data.seo.keywords,
+  };
+}
+
+const ProductPage = async ({ params }) => {
+  const { product } = await params;
+  const data = await fetchData(product);
 
   return (
     <div>
@@ -27,4 +37,4 @@ const page = async ({ params }) => {
   );
 };
 
-export default page;
+export default ProductPage;
