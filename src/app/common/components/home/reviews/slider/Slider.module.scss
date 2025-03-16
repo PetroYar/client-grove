@@ -6,7 +6,7 @@
   background: $bgLight;
   min-width: 250px !important;
   max-width: 500px !important;
-
+    padding: 0 10px;
   border-radius: 8px;
   box-shadow: 
   -7px -7px 14px #ffffff,  
@@ -19,6 +19,7 @@
     font-weight: 700;
     text-transform: capitalize;
   }
+  text-align: center;
 }
 }
 

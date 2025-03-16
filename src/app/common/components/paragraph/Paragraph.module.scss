@@ -3,6 +3,11 @@
 .paragraph {
   // width: 60%;
   line-height: 29px;
+  
+  
   @include adaptiveValue("font-size", 18, 16);
   @include adaptiveValue("margin-bottom", 60, 20);
+  &::first-letter {
+  text-transform: uppercase;
+}
 }
