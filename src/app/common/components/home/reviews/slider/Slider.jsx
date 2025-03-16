@@ -20,10 +20,10 @@ const Slider = ({ data }) => {
         modules={[Pagination]}
         spaceBetween={30}
         className={styles.container}
-        style={{ maxWidth: "100%", overflow: "hidden", padding: "10px 15px 40px 15px" }}
-        loop={true}
+        style={{ maxWidth: "100%", minHeight:'300px', overflow: "hidden", padding: "10px 15px 40px 15px" }}
+        // loop={true}
         breakpoints={{
-          550: { slidesPerView: 1.5 }, 
+          550: { slidesPerView: 'auto' }, 
           0: { slidesPerView: 1 }, 
         }}
       >
