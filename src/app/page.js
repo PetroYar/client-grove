@@ -2,6 +2,7 @@ import Hero from "./common/components/home/hero/Hero";
 import Promo from "./common/components/home/promo/Promo";
 
 import { getData } from "@/app/common/libs/services";
+import Reviews from "./common/components/home/reviews/Reviews";
 
 const fetchData = async () => {
   try {
@@ -31,6 +32,7 @@ export default async function Home() {
     <div>
       <Hero data={groupedData?.hero} />
       <Promo />
+      <Reviews/>
     </div>
   );
 }

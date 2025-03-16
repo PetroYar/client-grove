@@ -1,0 +1,14 @@
+@use '../../../../../styles/forward.scss' as *;
+.container{
+  margin-bottom: toRem(300);
+  .body{
+   
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("column-gap",150 ,30 );
+    row-gap: toRem(40);
+    @media (max-width:1200px){
+        flex-direction: column-reverse;
+    }
+  }
+}
