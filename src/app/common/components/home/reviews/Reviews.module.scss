@@ -1,6 +1,5 @@
 @use '../../../../../styles/forward.scss' as *;
-.container{
-  margin-bottom: toRem(300);
+.container{@include adaptiveValue("margin-bottom",80 ,30 );
   .body{
    
     display: flex;

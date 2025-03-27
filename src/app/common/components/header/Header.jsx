@@ -3,11 +3,12 @@ import Link from "next/link";
 import styles from "./Header.module.scss";
 import useWindowSize from "../../hooks/useWindowSize";
 import { useState } from "react";
+import { useAuth } from "../../hooks/useAuth";
 
 const Header = (props) => {
   const { width } = useWindowSize();
   const [showBurger, setShowBurger] = useState(false);
-
+const {user} = useAuth()
   const mobile = 540;
 
   const toggleBurger = () => {
@@ -55,6 +56,10 @@ const Header = (props) => {
             </li>
             <li onClick={handleLinkClick}>
               <Link href={"/galery"}>галерея</Link>
+            </li>
+            <li onClick={handleLinkClick}>
+              {user?.username}
+              <Link href={"/login"}>login</Link>
             </li>
           </ul>
         </nav>

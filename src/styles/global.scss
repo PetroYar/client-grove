@@ -4,6 +4,9 @@
 
 body {
   overflow-x: hidden;
+  // display: flex;
+  // flex-direction: column;
+  height: 100%;
 }
 main {
   flex: 1 0 auto;
@@ -12,10 +15,17 @@ main {
   flex-direction: column;
   display: flex;
   max-width: 1480px;
-  height: 100%;
   margin: 0 auto;
   padding: 0 15px;
   @media (max-width:$mobileSmall){
      padding: 0 toRem(5); 
   }
 }
+
+.swiper-pagination-bullet-active{
+  background: $pink !important;
+}
+
+// .swiper-pagination-bullet-active-main{
+//   background: red !important;
+// }
