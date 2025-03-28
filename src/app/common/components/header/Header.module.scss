@@ -2,7 +2,7 @@
 
 .header {
   position: relative;
-
+padding: 0 toRem(10);
 @include adaptiveValue("margin-bottom",30 ,10 );
   .container {
     
