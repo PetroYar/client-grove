@@ -57,10 +57,10 @@ const {user} = useAuth()
             <li onClick={handleLinkClick}>
               <Link href={"/gallery"}>галерея</Link>
             </li>
-            <li onClick={handleLinkClick}>
+            {/* <li onClick={handleLinkClick}>
               {user?.username}
               <Link href={"/login"}>login</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
         {width < mobile && (
