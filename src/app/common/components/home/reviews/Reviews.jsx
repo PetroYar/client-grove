@@ -7,7 +7,7 @@ import Slider from "./slider/Slider";
 
 const fetchData = async (params) => {
   try {
-    return await getData("/comment");
+    return await getData("/comment/published");
   } catch (error) {
     console.error("Error during fetching:", error);
   }
@@ -15,13 +15,14 @@ const fetchData = async (params) => {
 
 const Reviews = async (props) => {
   const data = await fetchData();
+  console.log(data)
   return (
     <section className={styles.container}>
       <TitleH2>Наші клієнти</TitleH2>
       <Paragraph text={"Залиште свій коментар – нам важлива ваша думка! "} />
       <div className={styles.body}>
         <Form />
-        <Slider data={data?.comments} />
+        <Slider data={data} />
       </div>
     </section>
   );

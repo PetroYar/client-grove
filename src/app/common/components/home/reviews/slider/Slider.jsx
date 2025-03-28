@@ -27,7 +27,7 @@ const Slider = ({ data }) => {
           0: { slidesPerView: 1 }, 
         }}
       >
-        {data.map((comment) => {
+        {data?.map((comment) => {
           return (
             <SwiperSlide className={styles.slide} key={comment._id}>
               <Paragraph text={comment.description} />

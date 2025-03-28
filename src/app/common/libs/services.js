@@ -1,5 +1,5 @@
-const API_URL = "https://grove-server-one.vercel.app/api"  || "http://localhost:5000/api";
-
+const API_URL =
+  "http://localhost:5000/api" || "https://grove-server-one.vercel.app/api";
 
 export const getData = async (params, token) => {
   try {
@@ -24,14 +24,14 @@ export const getData = async (params, token) => {
 };
 
 export const postData = async (params, body) => {
-    const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
 
   try {
     const response = await fetch(API_URL + params, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: token ? `Bearer ${token}` : "", 
+        Authorization: token ? `Bearer ${token}` : "",
       },
       body: JSON.stringify(body),
     });
