@@ -4,28 +4,24 @@
 
 body {
   overflow-x: hidden;
-  // display: flex;
-  // flex-direction: column;
+
   height: 100%;
+  
 }
 main {
-  flex: 1 0 auto;
+
 }
 .wraper {
-  flex-direction: column;
-  display: flex;
+  padding: 0 15px;
+  flex: 0 0  auto;
+
   max-width: 1480px;
   margin: 0 auto;
-  padding: 0 15px;
-  @media (max-width:$mobileSmall){
-     padding: 0 toRem(5); 
+  @media (max-width: $mobileSmall) {
+    padding: 0 toRem(5);
   }
 }
 
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
   background: $pink !important;
 }
-
-// .swiper-pagination-bullet-active-main{
-//   background: red !important;
-// }

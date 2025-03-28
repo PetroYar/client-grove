@@ -1,0 +1,34 @@
+@use "../../../../../styles/forward.scss" as *;
+.gallery {
+  column-count: 2; 
+  column-gap: toRem(10);
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: toRem(10);
+  border-radius: toRem(10);
+}
+
+.container{
+  @include adaptiveValue("margin-bottom", 80,30 );
+   a {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      gap: 10px;
+      background: $pink;
+      font-weight: 500;
+      color: white;
+      max-width: max-content;
+      border-radius: 24px 4px;
+      line-height: 29px;
+      padding: toRem(8) toRem(24);
+      @include adaptiveValue("font-size", 20, 18);
+      .arrow {
+        width: 24px;
+        height: 24px;
+        color: white; 
+      }
+    }
+}

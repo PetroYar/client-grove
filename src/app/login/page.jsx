@@ -88,6 +88,7 @@ const {user,login,register} = useAuth()
           >
             {showPassword ? <FaEyeSlash /> : <FaEye />}
           </button>
+          
         </div>
         {!isLogin && (
           <div className={styles.input}>
