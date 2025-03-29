@@ -1,0 +1,55 @@
+@use "../../../../../styles/forward.scss" as *;
+.container {
+  @include adaptiveValue("margin-bottom",80 ,30 );
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  margin-bottom: toRem(40);
+  }
+  a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: $pink;
+    font-weight: 500;
+    color: white;
+    max-width: max-content;
+    border-radius: 24px 4px;
+    line-height: 29px;
+    padding: toRem(8) toRem(24);
+    @include adaptiveValue("font-size", 20, 18);
+    .arrow {
+      width: 24px;
+      height: 24px;
+      color: white; 
+    }
+  }
+  ul{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: toRem(30);
+    @media (max-width:400px){
+    gap: toRem(10);
+
+    grid-template-columns: repeat(1,1fr);
+       
+    }
+    
+    li{
+      margin-bottom: toRem(15);
+      div{
+        display: flex;
+        justify-content: space-between;
+        // margin-bottom: toRem(5);
+        gap: toRem(20);
+        hr{
+          width: 100%; /* Лінія займає всю ширину контейнера */
+  
+  border-top: 2px dotted #000; /* Колір і товщина лінії */
+  margin: 10px 0
+        }
+      }
+    }
+  }
+}

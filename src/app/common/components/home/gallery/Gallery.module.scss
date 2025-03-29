@@ -2,16 +2,23 @@
 .gallery {
   column-count: 2; 
   column-gap: toRem(10);
+  // max-height: 500px;
 }
 
 .gallery img {
   width: 100%;
+  
   margin-bottom: toRem(10);
   border-radius: toRem(10);
+  
 }
 
 .container{
+
   @include adaptiveValue("margin-bottom", 80,30 );
+  h2{
+    margin-bottom: toRem(40);
+  }
    a {
       display: flex;
       align-items: center;

@@ -15,7 +15,7 @@ const fetchData = async (params) => {
 
 const Reviews = async (props) => {
   const data = await fetchData();
-  console.log(data)
+
   return (
     <section className={styles.container}>
       <TitleH2>Наші клієнти</TitleH2>

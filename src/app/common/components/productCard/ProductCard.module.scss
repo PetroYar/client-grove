@@ -17,7 +17,11 @@
 
   h6 {
     font-weight: 700;
+  &::first-letter {
+    text-transform: uppercase; /* Перша буква першого слова велика */
+  }
     @include adaptiveValue("font-size", 20, 16);
+   
   }
   p {
     line-height: 1.5;
