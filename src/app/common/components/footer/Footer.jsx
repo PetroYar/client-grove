@@ -39,7 +39,7 @@ const Footer = async (props) => {
             <Link href={"/about"}>про нас</Link>
           </li>
           <li>
-            <Link href={"/galery"}>галерея</Link>
+            <Link href={"/gallery"}>галерея</Link>
           </li>
         </ul>
 
