@@ -8,7 +8,7 @@ import { useAuth } from "../../hooks/useAuth";
 const Header = (props) => {
   const { width } = useWindowSize();
   const [showBurger, setShowBurger] = useState(false);
-const {user} = useAuth()
+const {user,logout} = useAuth()
   const mobile = 540;
 
   const toggleBurger = () => {
@@ -57,10 +57,10 @@ const {user} = useAuth()
             <li onClick={handleLinkClick}>
               <Link href={"/gallery"}>галерея</Link>
             </li>
-            {/* <li onClick={handleLinkClick}>
-              {user?.username}
-              <Link href={"/login"}>login</Link>
-            </li> */}
+            <li className={styles.login} onClick={!user? handleLinkClick : logout}>
+              
+              <Link href={"/login"}>{!user? 'Увійти':'Вийти'}</Link>
+            </li>
           </ul>
         </nav>
         {width < mobile && (

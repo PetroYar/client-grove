@@ -17,7 +17,7 @@ const Gallery = ({ data }) => {
                 alt="Gallery Image"
                 width={700}
                 height={1000}
-                layout="intrinsic"
+                layout="responsive"
               />
             </li>
           );
