@@ -39,7 +39,7 @@ const {user,logout} = useAuth()
               <Link href={"/"}>головна</Link>
             </li>
             <li onClick={handleLinkClick}>
-              <Link href={"/menu"}>меню</Link>
+              <Link href={"/menu/kava"}>меню</Link>
             </li>
 
             {width > mobile && (
@@ -57,9 +57,11 @@ const {user,logout} = useAuth()
             <li onClick={handleLinkClick}>
               <Link href={"/gallery"}>галерея</Link>
             </li>
-            <li className={styles.login} onClick={!user? handleLinkClick : logout}>
-              
-              <Link href={"/login"}>{!user? 'Увійти':'Вийти'}</Link>
+            <li
+              className={styles.login}
+              onClick={!user ? handleLinkClick : logout}
+            >
+              <Link href={"/login"}>{!user ? "Увійти" : "Вийти"}</Link>
             </li>
           </ul>
         </nav>

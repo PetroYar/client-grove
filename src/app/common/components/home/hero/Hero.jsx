@@ -24,7 +24,7 @@ export default async function Hero({ data }) {
           <h1>{title}</h1>
           <Paragraph text={description} />
 
-          <Link href={"/menu"}>
+          <Link href={"/menu/kava"}>
             Меню <FaArrowRight className={styles.arrow} />
           </Link>
         </div>

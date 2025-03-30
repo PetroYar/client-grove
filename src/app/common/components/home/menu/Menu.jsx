@@ -19,12 +19,11 @@ const Menu = async () => {
     <div className={styles.container}>
       <div className={styles.top}>
         <TitleH2>гарячі напої</TitleH2>
-        <Link href={"/menu"}>
+        <Link href={"/menu/kava"}>
           Дивитись більше <FaArrowRight className={styles.arrow} />
         </Link>
       </div>
       <ul>
-       
         {data?.products.map((item) => {
           return (
             <li key={item._id}>
@@ -33,7 +32,7 @@ const Menu = async () => {
                 <hr />
                 <p>{item.price}грн</p>
               </div>
-              
+
               <span>{item.size}</span>
             </li>
           );
