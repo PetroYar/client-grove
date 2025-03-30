@@ -10,6 +10,7 @@
 
     margin-bottom: toRem(30);
     @include adaptiveValue("font-size", 70, 24);
+    
   }
 
 }
@@ -19,18 +20,28 @@
   gap: 10px;
   margin-bottom: toRem(70);
   border-bottom: 2px solid $braun;
-  max-width: max-content;
+ 
 
+  align-items: center;
  
- height: 44px;
+  height: 44px;
+  
+  @media (max-width:$mobile){
+  flex-direction: column;
+   border: none; 
+  height: auto;
+   padding: 0 toRem(5);
  
- 
+  li{
+    
+    width: 100%;
+  }
 }
-.list::-webkit-scrollbar {
-  height: 0.1px; /* Мінімальна висота */
 }
+
 
 .link {
+  
   line-height: 1.5;
   text-transform: capitalize;
   font-size: toRem(20);
@@ -40,10 +51,19 @@
 white-space: nowrap;
   border-bottom: none;
   transition: all 0.3s;
+  @media (max-width:$mobile){
+  border: 1px solid;
+  border-radius: 4px;
+  min-width: 100%;
+  }
 }
 .active {
   border: 2px solid $braun;
   border-bottom: none;
   background: $bgCream;
  transform: scale3d(1, 1.1, 1);
+ @media (max-width:$mobile){
+  border: 1px solid $braun;
+    
+ }
 }
