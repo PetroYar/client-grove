@@ -10,46 +10,44 @@ const LoginPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
 
-const {user,login,register} = useAuth()
+  const { user, login, register } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
 
-
-
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleUsernameChange = (e) => setUsername(e.target.value);
   const handlePasswordConfirmChange = (e) => setPasswordConfirm(e.target.value);
 
- 
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isLogin) {
-      const user = {
-        email,
-        password,
-      };
-      login(user);
-    } else {
-      const newUser = {
-        password,
-        email,
-        username,
-      };
-      register(newUser);
+    try {
+      if (isLogin) {
+        const user = { email, password };
+        await login(user); 
+      } else {
+        const newUser = { password, email, username };
+        await register(newUser); 
+      }
+    } catch (error) {
+      setErrorMessage(error); 
+  
+      console.log("Помилка:", error);
+      console.log("Повідомлення про помилку:", error.message); 
     }
   };
 
   return (
     <div className={styles.container}>
-      <TitleH2>{isLogin ? "Login" : "Register"}</TitleH2>
+      <TitleH2>{isLogin ? "Увійти" : "Зареєструватись"}</TitleH2>
 
       <form className={styles.form} onSubmit={handleSubmit}>
+        {errorMessage && <div className={styles.error}>{errorMessage}</div>}
         {!isLogin && (
           <div className={styles.input}>
             <label htmlFor="username">Імя</label>
@@ -88,7 +86,6 @@ const {user,login,register} = useAuth()
           >
             {showPassword ? <FaEyeSlash /> : <FaEye />}
           </button>
-          
         </div>
         {!isLogin && (
           <div className={styles.input}>

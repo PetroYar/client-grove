@@ -15,9 +15,9 @@ const Gallery = ({ data }) => {
               <Image
                 src={item.image}
                 alt="Gallery Image"
-                width={700}
-                height={1000}
-                layout="responsive"
+                width={700} // Вкажіть конкретні розміри
+                height={1000} // Пропорційно до вихідного зображення
+                style={{ maxWidth: "100%", height: "auto" }}
               />
             </li>
           );

@@ -18,7 +18,7 @@ console.log(e)
       }
     const res = await postData(`/comment`,newComment);
       console.log(res)
-      // setMessage(result.message);
+     setReview('')
     } catch (error) {
       setMessage("Помилка відправки!");
     }

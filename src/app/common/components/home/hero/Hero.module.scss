@@ -6,7 +6,7 @@
 
     justify-content: space-between;
     align-items: center;
-
+gap: toRem(10);
     position: relative;
   @include adaptiveValue("margin-bottom",80 ,30 );
 
@@ -17,8 +17,8 @@
     display: flex;
     flex-direction: column;
     flex: 0 0 50%;
-    @media (max-width: $mobileSmall) {
-      // flex: 0 0 100%;
+    @media (max-width: $mobile) {
+      flex: 0 0 60%;
 
       text-align: center;
     }

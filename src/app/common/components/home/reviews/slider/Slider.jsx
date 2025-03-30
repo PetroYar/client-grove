@@ -11,6 +11,7 @@ import Paragraph from "../../../paragraph/Paragraph";
 import { formatDateShort } from "@/app/common/libs/formatDate";
 
 const Slider = ({ data }) => {
+  console.log(data)
   return (
     <>
       <Swiper
@@ -30,8 +31,8 @@ const Slider = ({ data }) => {
         {data?.map((comment) => {
           return (
             <SwiperSlide className={styles.slide} key={comment._id}>
-              <Paragraph text={comment.description} />
-              <h6>{comment.user}</h6>
+              <h6>{comment.userId.username}</h6>
+              <p>{comment.description}</p>
               <span>{formatDateShort(comment.createdAt)}</span>
             </SwiperSlide>
           );

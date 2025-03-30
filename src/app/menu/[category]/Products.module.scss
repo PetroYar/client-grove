@@ -5,8 +5,9 @@
   .list {
     display: flex;
     flex-wrap: wrap;
-   
+   height: 100%;
     row-gap: toRem(40);
+    
     justify-content: space-around;
     @include adaptiveValue("column-gap",20 ,10 );
   }

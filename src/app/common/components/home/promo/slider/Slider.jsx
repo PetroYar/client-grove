@@ -38,13 +38,18 @@ const Slider = ({ data }) => {
         {data?.map((product) => {
           return (
             <SwiperSlide className={styles.slide} key={product._id}>
-              <div className={styles.image}>
+              <div
+                className={styles.image}
+              
+              >
                 <Image
                   src={product.image}
                   alt="Gallery Image"
-                  width={200}
-                  height={300}
-                  layout="intrinsic"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{
+                    objectFit: "contain",
+                  }}
                 />
               </div>
               <h6>{product.name}</h6>

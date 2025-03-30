@@ -2,7 +2,7 @@
 
 .container {
   
-  
+  @include adaptiveValue("margin-bottom",80 , 40);
   h1 {
     text-transform: capitalize;
     font-weight: 700;

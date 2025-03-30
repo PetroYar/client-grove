@@ -31,7 +31,7 @@ const Menu = async () => {
               <div>
                 <h6>{item.name}</h6>
                 <hr />
-                <p>{item.price}</p>
+                <p>{item.price}грн</p>
               </div>
               
               <span>{item.size}</span>

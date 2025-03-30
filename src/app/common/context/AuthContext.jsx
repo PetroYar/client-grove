@@ -8,13 +8,12 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const router = useRouter();
-  
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       getUser(token);
-    } 
+    }
   }, []);
 
   const getUser = async (token) => {
@@ -24,15 +23,13 @@ const AuthProvider = ({ children }) => {
       setUser(userData);
     } catch (error) {
       console.error(error);
-     
-    } 
+    }
   };
 
-   const logout = () => {
-     setUser(null);
-     localStorage.removeItem("token");
-     
-   };
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem("token");
+  };
 
   const login = async (data) => {
     try {
@@ -40,26 +37,26 @@ const AuthProvider = ({ children }) => {
 
       if (req.token) {
         localStorage.setItem("token", req.token);
-        getUser(req.token)
+        getUser(req.token);
         router.push("/");
       }
     } catch (error) {
       console.error(error);
-      console.error(error.response?.data?.message || error.message);
+      throw error.message;
     }
   };
 
   const register = async (data) => {
     try {
       await postData("/auth/registration", data);
-     
-      router.push("/");
+      const user = {
+        password: data.password,
+        email: data.email,
+      };
+      login(user);
     } catch (error) {
       console.error(error);
-      console.error(
-        "❌ Помилка реєстрації:",
-        error.response?.data?.message || error.message
-      );
+      throw error.message;
     }
   };
   const ctx = {
@@ -67,7 +64,7 @@ const AuthProvider = ({ children }) => {
     setUser,
     login,
     register,
-    logout
+    logout,
   };
   return <AuthContext.Provider value={ctx}>{children}</AuthContext.Provider>;
 };

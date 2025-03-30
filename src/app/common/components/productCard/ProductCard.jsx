@@ -7,7 +7,15 @@ const ProductCard = ({ product, category }) => {
   return (
     <article className={styles.card}>
       <div className={styles.img}>
-        <Image src={product.image} alt={product.name} fill sizes="100%" />
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          style={{
+            objectFit: "contain",
+          }}
+        />
       </div>
       <h6>{product.name}</h6>
       <p>{product.description}</p>
@@ -20,7 +28,9 @@ const ProductCard = ({ product, category }) => {
           }`}
         >
           {product.price}
-          {product.discount>0 && <span>{parseInt(product.price) - product.discount}</span>}
+          {/* {product.discount > 0 && (
+            <span>{parseInt(product.price) - product.discount}</span>
+          )} */}
         </span>
       </div>
     </article>

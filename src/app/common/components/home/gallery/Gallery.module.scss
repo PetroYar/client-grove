@@ -7,14 +7,23 @@
 
 .gallery img {
   width: 100%;
-  
+  // height: auto;
   margin-bottom: toRem(10);
   border-radius: toRem(10);
-  
+  // object-fit: contain;
+  background: $bgLight;
+  // padding: toRem(10);
 }
 
 .container{
-
+// li{
+//   position: relative;
+//   width: 100%;
+  
+//   margin-bottom: toRem(10);
+ 
+//   @include adaptiveValue("height",500 ,200 );
+// }
   @include adaptiveValue("margin-bottom", 80,30 );
   h2{
     margin-bottom: toRem(40);
