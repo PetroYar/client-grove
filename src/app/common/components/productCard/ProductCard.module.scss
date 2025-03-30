@@ -46,10 +46,9 @@ flex: 1 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: toRem(64);
-    height: toRem(64);
-    @include adaptiveValue("width", 64, 30);
-    @include adaptiveValue("height", 64, 30);
+   @include adaptiveValue("font-size",16 ,14 );
+    @include adaptiveValue("width", 64, 35);
+    @include adaptiveValue("height", 64, 35);
   }
   .img {
     position: relative;
