@@ -6,7 +6,7 @@ const Pagination = ({ currentPage, lastPage, limit }) => {
     <div className={styles.pagination}>
       {currentPage > 1 && (
         <Link href={`?_start=${(currentPage - 2) * limit}`}>
-          <MdArrowBack />
+          <MdArrowBack className={styles.arrow} />
         </Link>
       )}
 
@@ -22,7 +22,7 @@ const Pagination = ({ currentPage, lastPage, limit }) => {
 
       {currentPage < lastPage && (
         <Link href={`?_start=${currentPage * limit}&_limit=${limit}`}>
-          <MdArrowForward />
+          <MdArrowForward className={styles.arrow} />
         </Link>
       )}
     </div>

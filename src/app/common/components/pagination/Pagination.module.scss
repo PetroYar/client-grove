@@ -1,11 +1,16 @@
 @use "../../../../styles/forward.scss" as *;
 
-.pagination{
+.pagination {
   display: flex;
   align-items: center;
   gap: toRem(10);
   justify-content: center;
-  .active{
+  font-size: toRem(28);
+
+  .active {
     color: $pink;
   }
+}
+.arrow {
+  font-size: toRem(30);
 }
