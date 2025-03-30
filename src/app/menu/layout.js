@@ -18,7 +18,8 @@ const MenuLayout = async ({ children }) => {
   return (
     <div className={styles.container}>
       <h1>меню</h1>
-      <ul className={styles.list}>
+      
+        <ul className={styles.list}>
         {data.map((item) => (
           <li className={styles.category} key={item._id}>
             <ActiveLink
@@ -31,6 +32,7 @@ const MenuLayout = async ({ children }) => {
           </li>
         ))}
       </ul>
+      
       <div>{children}</div>
     </div>
   );

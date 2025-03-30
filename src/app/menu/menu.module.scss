@@ -11,6 +11,7 @@
     margin-bottom: toRem(30);
     @include adaptiveValue("font-size", 70, 24);
   }
+
 }
 
 .list {
@@ -19,7 +20,14 @@
   margin-bottom: toRem(70);
   border-bottom: 2px solid $braun;
   max-width: max-content;
-  height: 44px;
+
+ 
+ height: 44px;
+ 
+ 
+}
+.list::-webkit-scrollbar {
+  height: 0.1px; /* Мінімальна висота */
 }
 
 .link {
@@ -29,7 +37,7 @@
   border: 1px solid;
   border-radius: 4px 4px 0 0;
   padding: toRem(5) toRem(10);
-
+white-space: nowrap;
   border-bottom: none;
   transition: all 0.3s;
 }

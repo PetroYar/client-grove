@@ -33,6 +33,11 @@ export default async function Home() {
     { hero: [], promo: [], gallery:[] }
   );
 
+// бургер анімація
+// знижка
+
+
+
   return (
     <div>
       <Hero data={groupedData?.hero} />
