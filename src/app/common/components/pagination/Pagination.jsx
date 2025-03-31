@@ -2,7 +2,14 @@ import Link from "next/link";
 import styles from "./Pagination.module.scss";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 const Pagination = ({ currentPage, lastPage, limit }) => {
+
+ if (lastPage <= 1) {
+   
+   return null;
+ }
+
   return (
+
     <div className={styles.pagination}>
       {currentPage > 1 && (
         <Link href={`?_start=${(currentPage - 2) * limit}`}>

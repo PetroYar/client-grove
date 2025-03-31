@@ -1,11 +1,12 @@
 @use "../../../../../styles/forward.scss" as *;
 .container {
-  @include adaptiveValue("margin-bottom",80 ,30 );
+  @include adaptiveValue("margin-bottom", 80, 30);
   .top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  margin-bottom: toRem(40);
+    margin-bottom: toRem(40);
+    gap: toRem(10);
   }
   a {
     display: flex;
@@ -22,32 +23,31 @@
     .arrow {
       width: 24px;
       height: 24px;
-      color: white; 
+      color: white;
     }
   }
-  ul{
+  ul {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: toRem(30);
-    @media (max-width:400px){
-    gap: toRem(10);
+    @media (max-width: 500px) {
+      gap: toRem(10);
 
-    grid-template-columns: repeat(1,1fr);
-       
+      grid-template-columns: repeat(1, 1fr);
     }
-    
-    li{
+
+    li {
       margin-bottom: toRem(15);
-      div{
+      div {
         display: flex;
         justify-content: space-between;
-        // margin-bottom: toRem(5);
+
         gap: toRem(20);
-        hr{
-          width: 100%; /* Лінія займає всю ширину контейнера */
-  
-  border-top: 2px dotted #000; /* Колір і товщина лінії */
-  margin: 10px 0
+        hr {
+          width: 100%;
+
+          border-top: 2px dotted #000;
+          margin: 10px 0;
         }
       }
     }

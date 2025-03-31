@@ -1,5 +1,5 @@
 const API_URL =
-  "https://grove-server-one.vercel.app/api";
+  "http://localhost:5000/api" || "https://grove-server-one.vercel.app/api";
 
 export const getData = async (params, token) => {
   try {
@@ -35,11 +35,12 @@ export const postData = async (params, body) => {
       },
       body: JSON.stringify(body),
     });
-
     if (!response.ok) {
-      throw new Error(`Request failed with status: ${response.status}`);
+      const errorData = await response.json();
+      const errorMessage =
+        errorData?.message || `Request failed with status: ${response.status}`;
+      throw new Error(errorMessage);
     }
-
     const data = await response.json();
     return data;
   } catch (error) {

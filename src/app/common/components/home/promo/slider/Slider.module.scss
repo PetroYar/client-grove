@@ -33,10 +33,10 @@
    .image{
     position: relative;
    
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
     @include adaptiveValue("width",200 ,100 );
     @include adaptiveValue("height",200 ,100 );
 
-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
    }
   }
 }

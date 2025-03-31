@@ -8,6 +8,7 @@ const Gallery = ({ data }) => {
   return (
     <div className={styles.container}>
       <TitleH2>галерея</TitleH2>
+      
       <ul className={styles.gallery}>
         {data.map((item) => {
           return (
@@ -15,8 +16,8 @@ const Gallery = ({ data }) => {
               <Image
                 src={item.image}
                 alt="Gallery Image"
-                width={700} // Вкажіть конкретні розміри
-                height={1000} // Пропорційно до вихідного зображення
+                width={700} 
+                height={1000}
                 style={{ maxWidth: "100%", height: "auto" }}
               />
             </li>
@@ -24,7 +25,7 @@ const Gallery = ({ data }) => {
         })}
       </ul>
       <Link href="/gallery">
-        дивитись ще <FaArrowRight className={styles.arrow} />
+        Дивитись ще <FaArrowRight className={styles.arrow} />
       </Link>
     </div>
   );

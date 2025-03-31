@@ -1,0 +1,58 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.modalImage {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.closeButton,
+.prevButton,
+.nextButton {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  color: white;
+  transition: 0.3s;
+}
+
+.closeButton {
+  top: 10px;
+  right: 10px;
+}
+
+.prevButton {
+  left: 10px;
+}
+
+.nextButton {
+  right: 10px;
+}
+
+.closeButton:hover,
+.prevButton:hover,
+.nextButton:hover {
+  background: rgba(255, 255, 255, 0.6);
+}

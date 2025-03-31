@@ -20,7 +20,7 @@ const Menu = async () => {
       <div className={styles.top}>
         <TitleH2>гарячі напої</TitleH2>
         <Link href={"/menu/kava"}>
-          Дивитись більше <FaArrowRight className={styles.arrow} />
+          Дивитись ще <FaArrowRight className={styles.arrow} />
         </Link>
       </div>
       <ul>
