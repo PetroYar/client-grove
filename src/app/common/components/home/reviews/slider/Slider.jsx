@@ -11,7 +11,6 @@ import Paragraph from "../../../paragraph/Paragraph";
 import { formatDateShort } from "@/app/common/libs/formatDate";
 
 const Slider = ({ data }) => {
-  console.log(data)
   return (
     <>
       <Swiper
@@ -21,11 +20,15 @@ const Slider = ({ data }) => {
         modules={[Pagination]}
         spaceBetween={30}
         className={styles.container}
-        style={{ maxWidth: "100%", minHeight:'300px', overflow: "hidden", padding: "10px 15px 40px 15px" }}
-       
+        style={{
+          maxWidth: "100%",
+          minHeight: "300px",
+          overflow: "hidden",
+          padding: "10px 15px 40px 15px",
+        }}
         breakpoints={{
-          550: { slidesPerView: 'auto' }, 
-          0: { slidesPerView: 1 }, 
+          550: { slidesPerView: "auto" },
+          0: { slidesPerView: 1 },
         }}
       >
         {data?.map((comment) => {

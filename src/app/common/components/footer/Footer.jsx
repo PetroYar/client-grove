@@ -26,8 +26,8 @@ const Footer = async (props) => {
     {}
   );
   return (
-        <footer className={styles.wraper}>
-    <div className={styles.container}>
+    <footer className={styles.wraper}>
+      <div className={styles.container}>
         <Link href={"/"}>
           <img src="/logo.png" alt="logo" />
         </Link>
@@ -49,12 +49,12 @@ const Footer = async (props) => {
         </div>
         <div className={styles.contacts}>
           <a href={`tel:${number}`}>{number}</a>
-          <div className={styles.social}>
+          <div className={styles.socials}>
             <a href={facebook}>
-              <FaFacebook />
+              <FaFacebook className={styles.social} />
             </a>
             <a href={instagram}>
-              <FaInstagram />
+              <FaInstagram className={styles.social} />
             </a>
           </div>
         </div>

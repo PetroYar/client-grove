@@ -14,7 +14,10 @@
   gap: toRem(10);
   justify-content: center;
   @include adaptiveValue("width", 270, 300);
-  
+  @media (max-width:$mobileSmall){
+     min-height: toRem(400); 
+    
+  }
   
 
   h6 {
@@ -22,11 +25,11 @@
     &::first-letter {
       text-transform: uppercase; 
     }
-    @include adaptiveValue("font-size", 20, 16);
+    @include adaptiveValue("font-size", 24, 24);
   }
   p {
-    line-height: 1;
-
+    line-height: 1.2;
+font-size: toRem(18);
 flex: 1 0 auto;
   }
   .flex {
@@ -57,8 +60,8 @@ flex: 1 0 auto;
     margin-bottom: toRem(10);
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
    
-    width: toRem(142);
-    height: toRem(142);
+    width: toRem(170);
+    height: toRem(170);
   }
   // .discount {
   //   text-decoration: line-through;

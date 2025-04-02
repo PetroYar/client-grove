@@ -26,13 +26,13 @@ const {user,logout} = useAuth()
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        {width < mobile && (
+       
           <div onClick={handleLinkClick} className={styles.img}>
             <Link href={"/"}>
               <img src="/logo.png" alt="logo" />
             </Link>
           </div>
-        )}
+        
         <nav className={!showBurger ? styles.active : ""}>
           <ul className={`${!showBurger ? "" : styles.animateUl}`}>
             <li onClick={handleLinkClick}>
@@ -42,13 +42,13 @@ const {user,logout} = useAuth()
               <Link href={"/menu/kava"}>меню</Link>
             </li>
 
-            {width > mobile && (
+            {/* {width > mobile && (
               <li className={styles.img}>
                 <Link href={"/"}>
                   <img src="/logo.png" alt="logo" />
                 </Link>
               </li>
-            )}
+            )} */}
             <li onClick={handleLinkClick}>
               <Link href={"/about"} onClick={handleLinkClick}>
                 про нас
@@ -64,6 +64,8 @@ const {user,logout} = useAuth()
               <Link href={"/login"}>{!user ? "Увійти" : "Вийти"}</Link>
             </li>
           </ul>
+         
+          
         </nav>
         {width < mobile && (
           <button
